@@ -1,0 +1,27 @@
+extends base 
+
+block content
+  main.main 
+    .cart-header
+      .cart-heading Orders
+      //- a.cart-remove-all#clearCart Remove all
+    each order in orders
+      .cart-body.order-body
+        .order-header
+          //- .order-heading= `Ordered at ${order.orderedAt.toLocaleString('en-us') }`
+          .order-heading= `Ordered at ${order.orderedAt.toLocaleString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric", hour:"numeric", minute:"numeric", second:"numeric"}) }`
+          .order-total Total $#{order.items.reduce((sum, el) => sum + el.product.price*el.quantity, 0).toFixed(2)}
+        each item in order.items
+          .cart-item 
+            img.cart-item-image(src=`/img/images/${item.product.images[0]}`)
+            h1.cart-item-title #{item.product.name}
+            .cart-item-counter
+              .cart-counter-count(data-product-id=`${item.product.id}`,data-product-price=`${item.product.price}`)= `${item.quantity}${item.product.unitInLB?(item.quantity===1?' lb':' lbs'):''}`
+            .cart-item-price-container
+              .cart-item-price(data-product-id=`${item.product.id}`) $#{(item.product.price*item.quantity).toFixed(2)}
+    //- hr
+    //- .cart-checkout 
+    //-   .cart-checkout-amount#totalPrice Total: $#{cart.items.reduce((sum, el) => sum + el.product.price*el.quantity, 0)}
+    //-   button.btn.btn--green.span-all-rows(data-cart-id=`${cart.id}`)#checkout Checkout
+
+

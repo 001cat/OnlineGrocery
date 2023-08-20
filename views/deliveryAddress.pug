@@ -1,0 +1,75 @@
+extends base
+
+mixin diliveryItem(label,varName,defaultText,required)
+  .form__group__delivery
+    label.form__label(for=`${varName}`) #{label}
+    - if (required)
+      - if(defaultText)
+        input.form__input(type='text', id=`${varName}`, value=`${defaultText}`, required)
+      - else 
+        input.form__input(type='text', id=`${varName}`, required)
+    - else 
+      - if(defaultText)
+        input.form__input(type='text', id=`${varName}`, value=`${defaultText}`)
+      - else 
+        input.form__input(type='text', id=`${varName}`)
+  //- li(class=`${active ? 'side-nav--active' : ''}`)
+  //-   a(href=`${link}`)
+  //-     svg
+  //-       use(xlink:href=`img/icons.svg#icon-${icon}`)
+  //-     | #{text}
+
+block content 
+  main.main
+    .delivery-container
+      h2.heading-secondary.ma-bt-md Confirm your address
+      form.form.form-delivery
+        .form-delivery-text
+          +diliveryItem('Frist Name','firstName',address.firstName,true)
+          +diliveryItem('Last Name','lastName',address.lastName,true)
+          +diliveryItem('Address Line 1','addLine1',address.addLine1,true)
+          +diliveryItem('Address Line 2','addLine2',address.addLine2,false)
+          +diliveryItem('City','city',address.city,true)
+          +diliveryItem('State','state',address.state,true)
+          +diliveryItem('Zip Code','zipCode',address.zipCode,true)
+      .form-delivery-submit
+        button#pay.btn.btn--small.btn--green Make the payment
+        //- .form__group
+        //-   label.form__label(for='firstName') Frist Name
+        //-   input#name.form__input(type='text', value=`${address.firstName}`, required)
+        //- .form__group.ma-bt-md
+        //-   label.form__label(for='lastName') Last Name
+        //-   input#email.form__input(type='text', value=`${address.lastName}`, required)
+        //- .form__group.ma-bt-md
+        //-   label.form__label(for='addLine1') Address Line 1
+        //-   input#email.form__input(type='text', value=`${address.addLine1}`, required)
+        //- .form__group.ma-bt-md
+        //-   label.form__label(for='addLine2') Address Line 2
+        //-   input#email.form__input(type='text', value=`${address.addLine2}`)
+        //- .form__group.ma-bt-md
+        //-   label.form__label(for='city') City
+        //-   input#email.form__input(type='text', value=`${address.city}`, required)
+        //- .form__group.ma-bt-md
+        //-   label.form__label(for='state') State
+        //-   input#email.form__input(type='text', value=`${address.state}`, required)
+        //- .form__group.ma-bt-md
+        //-   label.form__label(for='zipCode') Zip Code
+        //-   input#email.form__input(type='text', value=`${address.zipCode}`, required)
+    //- .user-view__content
+    //-   .user-view__form-container
+    //-     h2.heading-secondary.ma-bt-md Your account settings
+    //-     form.form.form-user-data
+    //-       .form__group
+    //-         label.form__label(for='name') Name
+    //-         input#name.form__input(type='text', value=`${user.name}`, required)
+    //-       .form__group.ma-bt-md
+    //-         label.form__label(for='email') Email address
+    //-         input#email.form__input(type='email', value=`${user.email}`, required)
+    //-       .form__group.form__photo-upload
+    //-         img.form__user-photo(src=`/img/users/${user.photo}`, alt='User photo')
+    //-         input.form__upload(type='file',accept='image/*',id='photo', name='photo')
+    //-         label(for='photo') Choose new photo
+    //-         //- a.btn-text(href='') Choose new photo
+    //-       .form__group.right
+    //-         button.btn.btn--small.btn--green Save settings
+      

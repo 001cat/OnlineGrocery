@@ -1,0 +1,51 @@
+extends base 
+
+block content
+  main.main
+    if suggests
+      .card-container-title
+        .heading-secondary.ma-bt-md Suggests
+      .card-container
+        each product in suggests
+          .card
+            .card__header
+              .card__picture
+                img.card__picture-img(src=`/img/images/${product.images[0]}`, alt=`${product.name}`)
+              h3.heading-tertirary
+                span #{product.name}
+
+            //- .card__details
+            //-   p.card__text #{product.description}
+              
+            .card__footer
+              p.card__ratings
+                span.card__footer-value $#{product.price}
+                | 
+                if product.unitInLB
+                  span.card__footer-text / lb
+              if user
+                button.btn.btn--green.btn--small.add-to-cart-btn(data-product-id=`${product.id}`) Add to cart
+    .card-container-title
+      .heading-secondary.ma-bt-md All items
+    .card-container
+      each product in products
+        .card
+          .card__header
+            .card__picture
+              img.card__picture-img(src=`/img/images/${product.images[0]}`, alt=`${product.name}`)
+            h3.heading-tertirary
+              span #{product.name}
+
+          //- .card__details
+          //-   p.card__text #{product.description}
+            
+          .card__footer
+            p.card__ratings
+              span.card__footer-value $#{product.price}
+              | 
+              if product.unitInLB
+                span.card__footer-text / lb
+            if user
+              button.btn.btn--green.btn--small.add-to-cart-btn(data-product-id=`${product.id}`) Add to cart
+    //- .container.flex-middle.ma-tp-lg
+    //-   a.btn.btn--green(href='/preparing') Recommand for me!

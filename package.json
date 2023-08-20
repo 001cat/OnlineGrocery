@@ -1,0 +1,45 @@
+{
+  "name": "onlinegrocery",
+  "version": "1.0.0",
+  "description": "Demo of an online grocery store",
+  "main": "server.js",
+  "scripts": {
+    "start": "NODE_ENV=production nodemon server.js",
+    "test": "NODE_ENV=development nodemon server.js",
+    "watch:js": "parcel watch ./publicJS/index.js --out-dir ./public/js --out-file boudle.js",
+    "build:js": "parcel build ./publicJS/index.js --out-dir ./public/js --out-file boudle.js"
+  },
+  "author": "Mengyu Wu",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "bcrypt": "^5.1.0",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.1",
+    "mongodb": "^5.7.0",
+    "mongoose": "^7.4.3",
+    "multer": "^1.4.5-lts.1",
+    "pug": "^3.0.2",
+    "sharp": "^0.32.5",
+    "slugify": "^1.6.6",
+    "stripe": "^12.18.0",
+    "validator": "^13.11.0"
+  },
+  "engines": {
+    "node": "^20.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.47.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "^2.28.0",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-react": "^7.33.1",
+    "parcel-bundler": "^1.12.5",
+    "prettier": "^3.0.2"
+  }
+}

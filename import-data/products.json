@@ -1,0 +1,301 @@
+[
+  {
+    "name": "apple",
+    "price": 1.89,
+    "unitInLB": true,
+    "images": ["apple.webp"],
+    "nutrition100g": {
+      "protein": 0.26,
+      "fat": 0.17,
+      "fiber": 2.4,
+      "sugars": 10.39,
+      "water": 85.56
+    }
+  },
+  {
+    "name": "banana",
+    "price": 0.79,
+    "unitInLB": true,
+    "images": ["banana.webp"],
+    "nutrition100g": {
+      "protein": 1.09,
+      "fat": 0.33,
+      "fiber": 2.6,
+      "sugars": 12.23,
+      "water": 74.91
+    }
+  },
+  {
+    "name": "carrot",
+    "price": 0.98,
+    "unitInLB": true,
+    "images": ["carrot.webp"],
+    "nutrition100g": {
+      "protein": 0.93,
+      "fat": 0.24,
+      "fiber": 2.8,
+      "sugars": 4.74,
+      "water": 88.29
+    }
+  },
+  {
+    "name": "cauliflower",
+    "price": 3.86,
+    "unitInLB": false,
+    "images": ["cauliflower.webp"],
+    "nutrition100g": {
+      "protein": 1.92,
+      "fat": 0.28,
+      "fiber": 2,
+      "sugars": 1.91,
+      "water": 92.07
+    }
+  },
+  {
+    "name": "celery",
+    "price": 1.97,
+    "unitInLB": true,
+    "images": ["celery.webp"],
+    "nutrition100g": {
+      "protein": 0.69,
+      "fat": 0.17,
+      "fiber": 1.6,
+      "sugars": 1.34,
+      "water": 95.43
+    }
+  },
+  {
+    "name": "corn",
+    "price": 0.5,
+    "unitInLB": false,
+    "images": ["corn.webp"],
+    "nutrition100g": {
+      "protein": 3.27,
+      "fat": 1.35,
+      "fiber": 2,
+      "sugars": 6.26,
+      "water": 76.05
+    }
+  },
+  {
+    "name": "cucumber",
+    "price": 0.98,
+    "unitInLB": false,
+    "images": ["cucumber.webp"],
+    "nutrition100g": {
+      "protein": 0.65,
+      "fat": 0.11,
+      "fiber": 0.5,
+      "sugars": 1.67,
+      "water": 95.23
+    }
+  },
+  {
+    "name": "eggplant",
+    "price": 2.11,
+    "unitInLB": false,
+    "images": ["eggplant.webp"],
+    "nutrition100g": {
+      "protein": 0.98,
+      "fat": 0.18,
+      "fiber": 3,
+      "sugars": 3.53,
+      "water": 92.3
+    }
+  },
+  {
+    "name": "grape",
+    "price": 1.88,
+    "unitInLB": true,
+    "images": ["grape.webp"],
+    "nutrition100g": {
+      "protein": 0.72,
+      "fat": 0.16,
+      "fiber": 0.9,
+      "sugars": 15.48,
+      "water": 80.54
+    }
+  },
+  {
+    "name": "grapefruit",
+    "price": 1.18,
+    "unitInLB": false,
+    "images": ["grapefruit.webp"],
+    "nutrition100g": {
+      "protein": 0.77,
+      "fat": 0.14,
+      "fiber": 1.6,
+      "sugars": 6.89,
+      "water": 88.06
+    }
+  },
+  {
+    "name": "kiwi",
+    "price": 1.5,
+    "unitInLB": false,
+    "images": ["kiwi.webp"],
+    "nutrition100g": {
+      "protein": 1.14,
+      "fat": 0.52,
+      "fiber": 3,
+      "sugars": 8.99,
+      "water": 83.07
+    }
+  },
+  {
+    "name": "mango",
+    "price": 0.98,
+    "unitInLB": false,
+    "images": ["mango.webp"],
+    "nutrition100g": {
+      "protein": 0.82,
+      "fat": 0.38,
+      "fiber": 1.6,
+      "sugars": 13.66,
+      "water": 83.46
+    }
+  },
+  {
+    "name": "onion",
+    "price": 0.98,
+    "unitInLB": true,
+    "images": ["onion.webp"],
+    "nutrition100g": {
+      "protein": 1.1,
+      "fat": 0.1,
+      "fiber": 1.7,
+      "sugars": 4.24,
+      "water": 89.11
+    }
+  },
+  {
+    "name": "orange",
+    "price": 1.19,
+    "unitInLB": false,
+    "images": ["orange.webp"],
+    "nutrition100g": {
+      "protein": 0.94,
+      "fat": 0.12,
+      "fiber": 2.4,
+      "sugars": 9.35,
+      "water": 86.75
+    }
+  },
+  {
+    "name": "peach",
+    "price": 1.98,
+    "unitInLB": true,
+    "images": ["peach.webp"],
+    "nutrition100g": {
+      "protein": 0.91,
+      "fat": 0.27,
+      "fiber": 1.5,
+      "sugars": 8.39,
+      "water": 88.3
+    }
+  },
+  {
+    "name": "pear",
+    "price": 1.98,
+    "unitInLB": true,
+    "images": ["pear.webp"],
+    "nutrition100g": {
+      "protein": 0.36,
+      "fat": 0.14,
+      "fiber": 3.1,
+      "sugars": 9.75,
+      "water": 83.96
+    }
+  },
+  {
+    "name": "pineapple",
+    "price": 2.24,
+    "unitInLB": false,
+    "images": ["pineapple.webp"],
+    "nutrition100g": {
+      "protein": 0.54,
+      "fat": 0.12,
+      "fiber": 1.4,
+      "sugars": 9.85,
+      "water": 86
+    }
+  },
+  {
+    "name": "plum",
+    "price": 2.47,
+    "unitInLB": true,
+    "images": ["plum.webp"],
+    "nutrition100g": {
+      "protein": 0.7,
+      "fat": 0.28,
+      "fiber": 1.4,
+      "sugars": 9.92,
+      "water": 87.23
+    }
+  },
+  {
+    "name": "potato",
+    "price": 1.34,
+    "unitInLB": true,
+    "images": ["potato.webp"],
+    "nutrition100g": {
+      "protein": 2.05,
+      "fat": 0.09,
+      "fiber": 2.1,
+      "sugars": 0.82,
+      "water": 79.25
+    }
+  },
+  {
+    "name": "pumpkin",
+    "price": 1.99,
+    "unitInLB": true,
+    "images": ["pumpkin.webp"],
+    "nutrition100g": {
+      "protein": 1,
+      "fat": 0.1,
+      "fiber": 0.5,
+      "sugars": 2.76,
+      "water": 91.6
+    }
+  },
+  {
+    "name": "strawberry",
+    "price": 3.49,
+    "unitInLB": true,
+    "images": ["strawberry.webp"],
+    "nutrition100g": {
+      "protein": 0.67,
+      "fat": 0.3,
+      "fiber": 2,
+      "sugars": 4.89,
+      "water": 90.95
+    }
+  },
+  {
+    "name": "tomato",
+    "price": 1.5,
+    "unitInLB": true,
+    "images": ["tomato.webp"],
+    "nutrition100g": {
+      "protein": 0.88,
+      "fat": 0.2,
+      "fiber": 1.2,
+      "sugars": 2.63,
+      "water": 94.52
+    }
+  },
+  {
+    "name": "watermelon",
+    "price": 5.69,
+    "unitInLB": false,
+    "images": ["watermelon.webp"],
+    "nutrition100g": {
+      "protein": 0.61,
+      "fat": 0.15,
+      "fiber": 0.4,
+      "sugars": 6.2,
+      "water": 91.45
+    }
+  }
+]

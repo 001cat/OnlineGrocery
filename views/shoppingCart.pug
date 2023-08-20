@@ -1,0 +1,31 @@
+extends base 
+
+block content
+  main.main 
+    .cart-header
+      .cart-heading My Cart 
+      a.cart-remove-all#clearCart Remove all
+    .cart-body
+      each item in cart.items
+        .cart-item 
+          img.cart-item-image(src=`/img/images/${item.product.images[0]}`)
+          h1.cart-item-title= `${item.product.name}`
+          .cart-item-counter
+            .cart-counter-btn.minus(data-product-id=`${item.product.id}`) -
+            .cart-counter-quantity
+              .cart-counter-count(data-product-id=`${item.product.id}`,data-product-price=`${item.product.price}`) #{item.quantity}
+              if item.product.unitInLB
+                .cart-counter-unit(data-product-id=`${item.product.id}`,data-product-price=`${item.product.price}`) lb
+            .cart-counter-btn.plus(data-product-id=`${item.product.id}`) +
+          .cart-item-price-container
+            .cart-item-price(data-product-id=`${item.product.id}`) $#{(item.product.price*item.quantity).toFixed(2)}
+            a.cart-price-remove(data-product-id=`${item.product.id}`) Remove
+    hr.cart-checkout 
+    .cart-checkout 
+      .cart-checkout-amount#totalPrice Total: $#{cart.items.reduce((sum, el) => sum + el.product.price*el.quantity, 0).toFixed(2)}
+    .cart-checkout
+      - if (cart.items.length !== 0)
+        a.btn.btn--green.span-all-rows(href='/delivery-address') Checkout
+      //- button.btn.btn--green.span-all-rows(data-cart-id=`${cart.id}`)#checkout Checkout
+
+
