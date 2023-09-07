@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.use(authController.protect);
 router.route('/myOrders').get(orderController.getMyOrders);
-// .post(orderController.createMyOrder);
+router.post('/placeOrder/:userId', orderController.createOrderUnsafeReact);
 router.get('/checkout-session', orderController.getCheckoutSessionUnsafe);
 
 router.use(authController.restrictTo('admin'));

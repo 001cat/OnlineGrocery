@@ -15,6 +15,10 @@ router
   );
 
 router
+  .route('/suggests')
+  .get(authController.isLoggedIn, productController.getSuggests);
+
+router
   .route('/:id')
   .get(productController.getProduct)
   .patch(

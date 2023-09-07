@@ -86,20 +86,24 @@ const getDist = (ordersAvg, product, minmax) => {
 // const normalize = ()
 
 module.exports = async (userId, products) => {
-  const orders = await Order.find({ userId });
-  if (orders.length === 0) return false;
+  try {
+    const orders = await Order.find({ userId });
+    if (orders.length === 0) return false;
 
-  const minmax = getMinMax(products);
-  //   console.log(minmax);
-  const ordersAvg = getOrdersAvg(orders);
-  //   console.log(ordersAvg);
+    const minmax = getMinMax(products);
+    //   console.log(minmax);
+    const ordersAvg = getOrdersAvg(orders);
+    //   console.log(ordersAvg);
 
-  const res = products
-    .map((el) => getDist(ordersAvg, el, minmax))
-    .sort((a, b) => a.distance - b.distance)
-    .slice(0, 3)
-    .map((el) => el.product);
-  //   console.log(res);
-  //   console.log(res.map((el) => el.name));
-  return res;
+    const res = products
+      .map((el) => getDist(ordersAvg, el, minmax))
+      .sort((a, b) => a.distance - b.distance)
+      .slice(0, 3)
+      .map((el) => el.product);
+    //   console.log(res);
+    //   console.log(res.map((el) => el.name));
+    return res;
+  } catch {
+    return [];
+  }
 };

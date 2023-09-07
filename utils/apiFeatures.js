@@ -7,7 +7,7 @@ class APIFeatures {
   filter() {
     const queryObj = { ...this.queryObj };
 
-    const excludeFields = ["page", "sort", "limit", "fields"];
+    const excludeFields = ['page', 'sort', 'limit', 'fields'];
     excludeFields.forEach((el) => delete queryObj[el]);
 
     const queryStr = JSON.stringify(queryObj).replace(
@@ -21,20 +21,20 @@ class APIFeatures {
 
   sort() {
     if (this.queryObj.sort) {
-      const sortBy = this.queryObj.sort.split(",").join(" ");
+      const sortBy = this.queryObj.sort.split(',').join(' ');
       this.query = this.query.sort(sortBy);
     } else {
-      this.query = this.query.sort("-createdAt");
+      this.query = this.query.sort('-createdAt');
     }
     return this;
   }
 
   limitFields() {
     if (this.queryObj.fields) {
-      const fields = this.queryObj.fields.split(",").join(" ");
+      const fields = this.queryObj.fields.split(',').join(' ');
       this.query = this.query.select(fields);
     } else {
-      this.query = this.query.select("-__v");
+      this.query = this.query.select('-__v');
     }
     return this;
   }

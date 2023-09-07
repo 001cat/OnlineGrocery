@@ -5,6 +5,16 @@ const imageController = require('../controllers/imageController');
 
 const router = express.Router();
 
+// temperary solution
+router.get('/isLoggedIn', authController.isLoggedIn, (req, res, next) => {
+  res.status(200).json({
+    stats: 'success',
+    data: {
+      user: res.locals.user,
+    },
+  });
+});
+
 // authentication
 router.post('/signup', authController.signup);
 router.post('/login', authController.login);

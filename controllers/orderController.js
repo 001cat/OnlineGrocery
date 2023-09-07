@@ -80,3 +80,37 @@ exports.createOrderUnsafe = catchAsync(async (req, res, next) => {
   res.redirect(req.originalUrl.split('?')[0]);
   next();
 });
+
+exports.createOrderUnsafeReact = catchAsync(async (req, res, next) => {
+  if (!req.params.userId || req.params.userId !== req.user.id)
+    return next(new AppError('Order creation failed!', 500));
+  const cart = await Cart.findByIdAndUpdate(req.user.cartId, { items: [] });
+  if (cart.items.length === 0) {
+    return next(new AppError('Empty cart!', 400));
+  }
+  try {
+    const items = cart.items.map((el) => ({
+      quantity: el.quantity,
+      product: {
+        name: el.product.name,
+        price: el.product.price,
+        unitInLB: el.product.unitInLB,
+        nutrition100g: el.product.nutrition100g,
+        images: el.product.images,
+      },
+    }));
+    await Order.create({
+      userId: req.params.userId,
+      items,
+      orderedAt: Date.now(),
+      address: req.user.address,
+      status: 'paid',
+    });
+    res.status(200).json({
+      status: 'success',
+    });
+  } catch (err) {
+    await Cart.findByIdAndUpdate(req.user.cartId, { items: cart.items });
+    return next(new AppError('Order creation failed!', 500));
+  }
+});
